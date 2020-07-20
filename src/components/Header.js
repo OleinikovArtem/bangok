@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+// import { ContextApp } from '../context/Context'
 
 export const Header = () => {
+  // const [state, dispatch] = useContext(ContextApp)
   return (
       <header className="header container">
         <h1 className="heading logo">Bangkok Express</h1>

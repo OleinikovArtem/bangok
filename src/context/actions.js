@@ -1,0 +1,5 @@
+export const GET_FILTERED_PRODUCTS = 'GET_FILTERED_PRODUCTS'
+export const ADD_TO_BACKET = 'ADD_TO_BACKET'
+export const TOGGLE_NUTS = 'TOGGLE_NUTS'
+export const TOGGLE_VEGAN = 'TOGGLE_VEGAN'
+export const CHANGE_TAG = 'CHANGE_TAG'

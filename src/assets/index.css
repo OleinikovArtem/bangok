@@ -345,7 +345,9 @@ h2,
 .carousel__button:active {
   background-color: var(--color-yellow-dark);
 }
-
+.swiper-container {
+  height: 100%;
+}
 .carousel__inner {
   width: 100%;
   height: 100%;
@@ -364,7 +366,9 @@ h2,
   margin: 0;
 }
 
-.carousel__arrow {
+.swiper-button-next {
+  right: 0;
+  background: url(../assets/icons/angle-icon.svg) no-repeat center ;
   position: absolute;
   z-index: 3;
   bottom: 0;
@@ -379,12 +383,21 @@ h2,
   height: 70px;
 }
 
-.carousel__arrow_right {
-  right: 0;
-}
-
-.carousel__arrow_left {
+.swiper-button-prev {
   left: 0;
+  background: url(../assets/icons/angle-left-icon.svg) no-repeat center ;
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
 }
 
 .carousel__arrow img,

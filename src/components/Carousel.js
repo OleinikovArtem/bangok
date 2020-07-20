@@ -1,6 +1,4 @@
-import React, { useState } from 'react'
-import RightIcon from '../assets/icons/angle-icon.svg'
-import LeftIcon from '../assets/icons/angle-left-icon.svg'
+import React from 'react'
 
 import Item1 from '../assets/carousel/chicken_cashew.png'
 import Item2 from '../assets/carousel/chicken_loempias.png'
@@ -8,12 +6,10 @@ import Item3 from '../assets/carousel/penang_shrimp.png'
 import Item4 from '../assets/carousel/red_curry_vega.png'
 
 import { CarouserItem } from './CarouserItem'
-import SwiperCore, { Virtual, Navigation, Pagination, Controller } from 'swiper'
+import SwiperCore, { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/swiper.scss'
 
-SwiperCore.use([ Navigation, Pagination, Controller])
-
+SwiperCore.use([Navigation])
 
 
 const carouserlItems = [
@@ -24,31 +20,17 @@ const carouserlItems = [
 ]
 
 export const Carousel = () => {
-  const [controlledSwiper, setControlledSwiper] = useState(null)
-
-
-  console.log(<Swiper />)
+  const slides = carouserlItems.map(slide => <SwiperSlide key={slide.id}><CarouserItem {...slide} /></SwiperSlide>)
   return (
-    <div className="carousel">
-      <div className="carousel__arrow carousel__arrow_right"
-        onClick={() => setControlledSwiper(true)}>
-        <img src={RightIcon} alt="icon" />
-      </div>
-      <div className="carousel__arrow carousel__arrow_left">
-        <img src={LeftIcon} alt="icon" />
-      </div>
-
-      <Swiper
-        spaceBetween={0}
-        slidesPerView={1}
-        onSwiper={(swiper) => console.log(swiper)}
-        controller={{ control: controlledSwiper }}
-        style={{ height: '100%' }}
-        pagination={{ clickable: true }}
+    <div className="container">
+      <div className="carousel">
+        <Swiper
+          loop
+          navigation
         >
-      {carouserlItems.map(slide => <SwiperSlide key={slide.id}><CarouserItem {...slide} /></SwiperSlide>)}
-      </Swiper>
-
-    </div >
+          {slides}
+        </Swiper>
+      </div >
+    </div>
   )
 }
