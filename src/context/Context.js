@@ -82,11 +82,28 @@ export const reducer = (state, { type, payload }) => {
           orderList
         }
       }
-    // case MINUS_TO_BACKET:
-    //   const { id, price } = payload
-    //   return {
-    //     ...state
-    //   }
+    case MINUS_TO_BACKET:
+      const updateTotalPrice = state.backet.totalPrice - payload.price
+      const updateTotalCounter = state.backet.totalCount - 1
+
+      const updateOrderList = state.backet.orderList.filter(el => {
+        if (el.id === payload.id) {
+          if (el.count > 1) {
+            return {...el, count: el.count - 1}
+          }
+        }
+        return el
+      })
+
+      return {
+        ...state,
+        backet: {
+          ...state.backet,
+          totalPrice: updateTotalPrice,
+          totalCount: updateTotalCounter,
+          orderList: updateOrderList
+        }
+      }
     case OPEN_BACKET:
       return {
         ...state,

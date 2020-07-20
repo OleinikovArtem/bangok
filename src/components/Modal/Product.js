@@ -27,7 +27,7 @@ export const Product = ({ img, price, count, id, title}) => {
               <img src={PlusIcon} alt="plus" onClick={addToBacket} />
             </button>
           </div>
-          <div className="cart-product__price">€{price}</div>
+          <div className="cart-product__price">€{price * count}</div>
         </div>
       </div>
     </div>
