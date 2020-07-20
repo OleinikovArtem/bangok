@@ -13,10 +13,10 @@ SwiperCore.use([Navigation])
 
 
 const carouserlItems = [
-  { img: Item1, price: 16.00, title: 'Penang shrimp', id: 1 },
-  { img: Item2, price: 14.00, title: 'Chicken cashew', id: 2 },
-  { img: Item3, price: 12.50, title: 'Red curry veggies', id: 3 },
-  { img: Item4, price: 6.50, title: 'Chicken springrolls', id: 4 }
+  { img: Item1, "price": 16.00, title: 'Penang shrimp', id: '24' },
+  { img: Item2, "price": 14.00, title: 'Chicken cashew', id: '9' },
+  { img: Item3, "price": 12.50, title: 'Red curry veggies', id: '22' },
+  { img: Item4, "price": 6.50, title: 'Chicken springrolls', id: '20' }
 ]
 
 export const Carousel = () => {

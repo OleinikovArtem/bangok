@@ -1,7 +1,7 @@
 import React, { useReducer, useEffect } from 'react'
 import 'swiper/swiper.scss'
 
-import { Modal } from './components/Modal'
+import { Modal } from './components/Modal/Modal'
 import { Header } from './components/Header'
 import { Main } from './components/Main'
 
@@ -22,7 +22,7 @@ function App() {
       <div className={`App ${false && "is-modal-open"}`}>
         <Header />
         <Main />
-        {false && <Modal />}
+        {state.isOpenBacket && <Modal />}
       </div>
     </ContextApp.Provider>
   )
